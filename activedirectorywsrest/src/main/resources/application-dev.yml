@@ -1,0 +1,12 @@
+TZ: America/Mexico_City
+
+ldap:
+  url: "ldap://10.1.224.201:389"
+  connectionType: "simple"
+  contextFactory: "com.sun.jndi.ldap.LdapCtxFactory"
+  partitionSuffix: "ou=TestEngen,dc=engeniumcapital,dc=mx"
+  userDn: "cn=user_aut,ou=AdminUser,ou=TestEngen,dc=engeniumcapital,dc=mx"
+  principal: "user_aut"
+  password: "Temporal21*"
+  organizationNamespace: "ou=TestEngen,dc=engeniumcapital,dc=mx"
+  deletedUsersDn: "OU=Delete Users,OU=Users,OU=TestEngen,DC=engeniumcapital,DC=mx"

@@ -1,0 +1,36 @@
+Configuration:
+  name: log-config
+  properties:
+    property:
+      name: log-level-engen
+      # El nivel de log se configura por variable de ambiente
+      value: debug
+    property:
+      name: log-level-thirdparties
+      # El nivel de log se configura por variable de ambiente
+      value: debug
+
+  Appenders:
+    Console:
+      name: Console_Appender
+      target: SYSTEM_OUT
+      PatternLayout:
+        # Layout de ENGEN.
+        pattern: "%d{yyyy-MM-dd HH:mm:ss.SSS} [%-5level] [%t] %c{1.} - %msg%n"
+
+  Loggers:
+      Root:
+        level: ${log-level-thirdparties}
+        AppenderRef:
+          ref: Console_Appender
+
+      Logger:
+        - name: mx.com.engen
+          level: ${log-level-engen}
+          AppenderRef:
+            ref: Console_Appender
+      Logger:
+        - name: org.springframework
+          level: ${log-level-thirdparties}
+          AppenderRef:
+            ref: Console_Appender

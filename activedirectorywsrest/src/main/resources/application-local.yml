@@ -1,0 +1,22 @@
+TZ: America/Mexico_City
+
+spring:
+  ldap: 
+    embedded:
+      port: 8389
+      ldif: "classpath:ldap-data.ldif"
+      base-dn: dc=springframework,dc=org
+      credential:
+        username: uid=admin
+        password: secret
+  
+
+ldap:
+  url: "ldap://localhost:8389"
+  connectionType: "simple"
+  contextFactory: "com.sun.jndi.ldap.LdapCtxFactory"
+  partitionSuffix: "dc=springframework,dc=org"
+  userDn: "cn=Ben Alex,ou=people,dc=springframework,dc=org"
+  principal: "uid=admin"
+  password: "secret"
+  organizationNamespace: "dc=springframework,dc=org"
